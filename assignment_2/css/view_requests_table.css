@@ -1,0 +1,56 @@
+html, body {
+    /*set the width*/
+    width: 100%;
+    margin: 0 auto;
+    
+    /*set the webpage background colour*/
+    background-color: dimgrey;
+}
+
+header{
+    background-color: #A4A2A8;
+}
+
+h1 {
+    /*format the header1 element*/
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	font-size: 1.5em;
+	padding: 40px;
+    text-align: center;
+}
+
+table {
+    /*position the table*/
+    margin: 0 auto;
+    table-layout: fixed;
+    width:800px;
+    position:center;
+    
+    /*style the table*/
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #A4A2A8;
+    border-style: solid;
+    color: #000000;
+}
+
+th {
+    /*set a heading colour*/
+    background-color: #D0D4D9;
+}
+
+td, tr{
+    /*style the cells within the table*/
+    border-width: 2px;
+    border-color: #A4A2A8;
+    border-style: solid;
+    padding: 5px;
+}
+
+#views{
+    /*position the views div in the centre of the page*/
+    padding: 40px;
+    text-align: center;
+}

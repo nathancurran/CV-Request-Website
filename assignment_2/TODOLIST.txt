@@ -1,0 +1,8 @@
+TO DO LIST:
+Key features (key_features.pdf)
+    Commentary of the code
+    Highlight six key features of the presentation control of your page
+    Provide a brief commentary on their implementation
+
+redesign the php pages css
+fix comments

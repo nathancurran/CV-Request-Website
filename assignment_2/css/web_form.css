@@ -1,0 +1,118 @@
+header {
+    /*set the banner image*/
+    background-image: url(../images/form_banner.jpg);
+    background-repeat: no-repeat;
+    
+    /*center and fit the image*/
+    /*multi-browser compatability*/
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    /*round the top corners of the header*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+body {
+    /*set the webpage background colour*/
+    background-color: dimgrey;
+}
+
+#container {
+    /*resize the container to fit in the middle of the page*/
+    background-color: dimgrey;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 150px;
+    padding-left: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-family: Arial;
+}
+
+#content {
+    /*set a background colour and round the bottom corners*/
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: whitesmoke;
+    padding: 20px;
+} 
+
+h1 {
+    /*format header1*/
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 2.2em;
+	padding: 60px 0px 5px 0px;
+	text-align: center;
+    color: white;
+}
+
+h2 {
+    /*format header2*/
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	font-size: 2.1em;
+	padding: 5px 0px 60px 0px;
+    margin: 0;
+	text-align: center;
+    color: white;
+    
+}
+
+/*style inputs with type="text" and textareas*/
+input[type=text], textarea {
+    width: 100%;    /*resize the text area*/
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;  /*round the corners*/
+    box-sizing: border-box; /*keep the padding and margins in place*/
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;   /*allows users to expand the text area vertically*/
+    font-family: Arial; /*set the font style*/
+    font-size: 14px;
+}
+
+ /*style input with type="email"*/
+input[type=email] {
+    width: 100%;    /*resize the text area*/
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /*round the corners*/
+    box-sizing: border-box; /*keep the padding and margins in place*/
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/*style the submit button*/
+input[type=submit] {
+    background-color:limegreen;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*change colour on hover*/
+input[type=submit]:hover {
+    background-color: forestgreen;
+}
+
+#tablelink {
+    text-align: right;
+}
+
+/*phone screen conditions*/
+
+@media only screen and (max-width: 600px){
+	#container {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}

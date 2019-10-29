@@ -1,0 +1,176 @@
+html,body {
+    /*set the background image*/
+    background-image: url(../images/image_map_bg.jpg);
+    
+    /*adjust the webpage's dimensions*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    
+    /*center and scale the image*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /*format the text*/
+    font-size: 62.5%;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+
+a {
+    /*change the link appearance to fit in with the other text*/
+    text-decoration: none;
+	display: contents;
+    color: white;
+}
+
+a:hover {
+    /*link changes colour on hover*/
+    color: mediumblue;
+}
+
+#myname {
+    /*position the text*/
+    position: fixed;
+    top: 380px;
+    text-align: left;
+    left: 860px;
+    line-height: 1;
+    font-size: 38pt;
+}
+
+#COM109 {
+    /*position the text*/
+    position: fixed;
+    top: 200px;
+    font-size: 38pt;
+    text-align: left;
+    left: 540px;
+    line-height: 1;
+}
+
+#IWA {
+    /*position and style the text*/
+    position: fixed;
+    top: 80px;
+    font-size: 54pt;
+    text-align: left;
+    left: 910px;
+    font-style: oblique;
+    line-height: 1;
+}
+
+#cvrequest {
+    /*position and rotate the text*/
+    position: fixed;
+    top: 270px;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-size: 42pt;
+    text-align: left;
+    left: 730px;
+    line-height: 1;
+}
+
+#allelements {
+    /*position and rotate the text*/
+    position: fixed;
+    top: 525px;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    font-size: 42pt;
+    text-align: left;
+    left: 670px;
+    line-height: 1;
+}
+
+#keyfeatures {
+    /*position the text*/
+    position: fixed;
+    top: 350px;
+    font-size: 42pt;
+    text-align: left;
+    left: 540px;
+    line-height: 1;
+}
+
+#myinterests {
+    /*position and rotate the text*/
+    position: fixed;
+    top: 470px;
+    -moz-transform: rotate(325deg);
+    -webkit-transform: rotate(325deg);
+    -o-transform: rotate(325deg);
+    -ms-transform: rotate(325deg);
+    transform: rotate(325deg);
+    font-size: 42pt;
+    text-align: left;
+    left: 530px;
+    line-height: 1;
+}
+
+
+/*phone screen conditions*/
+
+@media only screen and (max-width: 600px){
+	html,body {
+        /*format the text*/
+        font-size: 42.5%;
+        font-weight: 100;
+        text-align: left;
+        color: white;
+    }
+    
+    /*adjust size and positioning of text to fit screen*/
+    
+    #myname {
+        top: 260px;
+        font-size: 20pt;
+        left: 145px;
+    }
+
+    #COM109 {
+        top: 200px;
+        font-size: 16pt;
+        left: 10px;
+    }
+
+    #IWA {
+        top: 125px;
+        font-size: 6pt;
+        left: 170px;
+    }
+
+    #cvrequest {
+        top: 215px;
+        font-size: 18pt;
+        left: 90px;
+    }
+
+    #allelements {
+        top: 325px;
+        font-size: 18pt;
+        left: 65px;
+    }
+
+    #keyfeatures {
+        top: 250px;
+        font-size: 18pt;
+        left: 10px;
+    }
+
+    #myinterests {
+        top: 300px;
+        font-size: 18pt;
+        left: 10px;
+    }
+}

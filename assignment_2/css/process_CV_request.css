@@ -1,0 +1,27 @@
+html, body {
+    /*set the width*/
+    width: 100%;
+    margin: 0 auto;
+    
+    /*set the webpage background colour*/
+    background-color: dimgrey;
+}
+
+header{
+    background-color: #A4A2A8;
+}
+
+h1 {
+    /*format the header1 element*/
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	font-size: 1.5em;
+	padding: 40px;
+    text-align: center;
+}
+
+#feedback{
+    /*position the views div in the centre of the page*/
+    padding: 40px;
+    text-align: center;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Determines the default stylesheet for computer and phone screen-->
+    <link rel="stylesheet" type="text/css" href="css/web_form.css" media="screen,projector" />
+    <!--Sets the size of the elements in the webpage to fit to the appropriate screen size-->
+    <meta name="viewport" content="width=device-width" , inital-scale="1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CV Request | Nathan Curran</title>
+
+    <meta charset="utf-8" />
+    <meta name="Author" content="Nathan Curran" />
+    <meta name="Description" content="COM109" />
+    <meta name="Keywords" content="CV Request Form, Nathan Curran, Undergraduate, Northern Ireland, UK, Education, Higher Education" />
+    
+    <!-- SCRIPTS - any code needed to control the client browser -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javaScript/script.js"></script>
+</head>
+<body>
+    <script> //php script to update the viewcount and unique visitors tables
+        <?php
+        //connection for database
+        require_once 'db.php';
+        
+        //get the total number of page views
+        mysqli_query($db_connection, "UPDATE viewcounter SET views = views + 1 WHERE pagename = 'CV_Request_Form';");
+        
+        $date = date("Y-m-d");  //set todays date
+        $userIP = $_SERVER['REMOTE_ADDR']; //get the current user ip
+        
+        $query = "SELECT * FROM unique_visitors"; //select all records query
+        $queryresult = $db_connection->query($query);
+        settype($sqlRowCount, "integer"); //create a new integer variable
+        
+        //if-else statement to get the number of rows in the table
+        if (is_object($queryresult)){
+            $sqlRowCount = $queryresult->num_rows;
+        }
+        else{
+            $sqlRowCount = 0;
+        }
+        
+        //if-else statement occurs when there are existing records in the table
+        if($sqlRowCount != 0){
+            //for loop runs through each row of the table
+            for($i=0;$i<=$sqlRowCount;$i++){
+               $row = $queryresult->fetch_assoc();
+                //if-else statements occurs if the existing ip of the current record matches the current user's ip
+                if(preg_match('/'.$userIP.'/i',$row['ip'])){
+                    //the table is updated adding 1 to the view count for the existing record
+                    $updateQuery = "UPDATE unique_visitors SET views=views+1 WHERE ip='$userIP'";
+                    mysqli_query($db_connection, $updateQuery);
+                }
+                else{
+                    //create a new record with the current user's ip
+                    $insertQuery = "INSERT INTO unique_visitors (date, ip) VALUES('$date','$userIP')";
+                    mysqli_query($db_connection, $insertQuery); 
+                } 
+            }
+
+        }
+        else {
+            //create a new record if there are no existing records
+            $insertQuery = "INSERT INTO unique_visitors (date, ip) VALUES('$date','$userIP')";
+            mysqli_query($db_connection, $insertQuery); 
+        }
+        ?>
+    </script> <!--closes the php script-->
+    
+    <div id="container">
+        <header>
+            <h1>CV Request Form</h1>
+            <h2>Nathan Curran</h2>
+        </header><!--closes the header-->
+
+        <div id="content">
+            <form id ="myForm" action="process_CV_request.php" target="_blank" method="post">
+                First name:
+                <input type="text" id="first_name" name="first_name" placeholder="Your first name..." autofocus><br>
+                Last name:
+                <input type="text" id="last_name" name="last_name" placeholder="Your last name..." ><br>
+                Business name:
+                <input type="text" name="business_name" placeholder="Your business name..." ><br>
+                E-mail:
+                <input type="email" id="email_address" name="email_address" placeholder="Your email address..." ><br>
+                Type of CV:
+                <input type="radio" name="cv_type" value="Long" checked="checked"> Long
+                <input type="radio" name="cv_type" value="Short"> Short<br><br>
+                Reason for request:
+                <textarea id="comment" name="user_comment" placeholder="Reason for CV request..." style="height:200px" maxlength=200></textarea>
+                <br>
+                <input id="submit" type="submit" value="Submit">
+            </form>
+            <div id="tablelink">
+                <a href="http://scm.ulster.ac.uk/~b00756824/workspace/com109/assignment_2/view_requests_table.php">Who else has viewed this webpage?</a>
+            </div> <!--closes the tablelink div-->
+        </div> <!--closes the content div-->
+    </div><!--closes the container div-->
+    <script> //calls the jQuery validation function whenever the form is submitted
+        $(document).ready(function() {
+            validation();
+        });
+    </script><!--closes the jQuery script-->
+</body>
+</html>
